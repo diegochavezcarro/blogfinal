@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+import {LoginService} from './service/login'
+import {HeadersService} from './service/headers'
+import {HomeComponent,LoginComponent,AddPostComponent} from './component'
+
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './heroes.component';
@@ -29,9 +33,12 @@ import { HeroSearchComponent }  from './hero-search.component';
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HomeComponent,
+    LoginComponent,
+    AddPostComponent
   ],
-  providers: [ HeroService ],
+  providers: [ HeroService,LoginService, HeadersService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

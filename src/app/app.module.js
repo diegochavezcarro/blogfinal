@@ -14,6 +14,9 @@ var app_routing_module_1 = require("./app-routing.module");
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./in-memory-data.service");
+var login_1 = require("./service/login");
+var headers_1 = require("./service/headers");
+var component_1 = require("./component");
 var app_component_1 = require("./app.component");
 var dashboard_component_1 = require("./dashboard.component");
 var heroes_component_1 = require("./heroes.component");
@@ -39,9 +42,12 @@ AppModule = __decorate([
             dashboard_component_1.DashboardComponent,
             hero_detail_component_1.HeroDetailComponent,
             heroes_component_1.HeroesComponent,
-            hero_search_component_1.HeroSearchComponent
+            hero_search_component_1.HeroSearchComponent,
+            component_1.HomeComponent,
+            component_1.LoginComponent,
+            component_1.AddPostComponent
         ],
-        providers: [hero_service_1.HeroService],
+        providers: [hero_service_1.HeroService, login_1.LoginService, headers_1.HeadersService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
