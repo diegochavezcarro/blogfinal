@@ -10,10 +10,6 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var component_1 = require("./component");
 var routes = [
-    /*{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard',  component: DashboardComponent },
-    { path: 'detail/:id', component: HeroDetailComponent },
-    { path: 'heroes',     component: HeroesComponent }*/
     { path: '', component: component_1.HomeComponent },
     { path: 'Login', component: component_1.LoginComponent },
     { path: 'Addpost', component: component_1.AddPostComponent }

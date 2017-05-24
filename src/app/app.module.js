@@ -15,11 +15,6 @@ var login_1 = require("./service/login");
 var headers_1 = require("./service/headers");
 var component_1 = require("./component");
 var app_component_1 = require("./app.component");
-var dashboard_component_1 = require("./dashboard.component");
-var heroes_component_1 = require("./heroes.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-var hero_service_1 = require("./hero.service");
-var hero_search_component_1 = require("./hero-search.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,20 +26,15 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            //InMemoryWebApiModule.forRoot(InMemoryDataService),
             app_routing_module_1.AppRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
-            dashboard_component_1.DashboardComponent,
-            hero_detail_component_1.HeroDetailComponent,
-            heroes_component_1.HeroesComponent,
-            hero_search_component_1.HeroSearchComponent,
             component_1.HomeComponent,
             component_1.LoginComponent,
             component_1.AddPostComponent
         ],
-        providers: [hero_service_1.HeroService, login_1.LoginService, headers_1.HeadersService],
+        providers: [login_1.LoginService, headers_1.HeadersService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
