@@ -26,11 +26,11 @@ import {PostService} from '../service/post'
             <form ngForm>
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" required placeholder="Title" [(ngModel)]="post.title">
+            <input type="text" name="title" class="form-control" id="title" required placeholder="Title" [(ngModel)]="post.title">
         </div>
         <div class="form-group">
             <label for="text">Text</label>
-            <textarea rows=10 cols=100 class="form-control" id="text" [(ngModel)]="post.text"></textarea>
+            <textarea rows=10 cols=100 class="form-control" name="text" id="text" [(ngModel)]="post.text"></textarea>
         </div>
         
         <button type="submit" class="btn btn-default pull-right" (click)="onClick($event)">Create</button>
@@ -65,7 +65,7 @@ export class AddPostComponent {
     }
     
     onInsertPostResult(result){
-        this._router.navigate( ['Home'] );
+        this._router.navigate( ['/'] );
     }
     onInsertPostError(error){
         this.showLoading = false; 

@@ -20,7 +20,7 @@ var UserService = (function () {
     }
     UserService.prototype.insert = function (u) {
         return this._http
-            .post('./api/login', JSON.stringify(u), this._header.getJsonHeaders())
+            .post('api/login', JSON.stringify(u), this._header.getJsonHeaders())
             .map(function (res) { return res.json(); });
     };
     return UserService;

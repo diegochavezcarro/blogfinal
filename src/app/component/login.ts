@@ -18,20 +18,20 @@ import {Router} from '@angular/router';
     <form ngForm>
         <div class="form-group">
             <label for="login">Login</label>
-            <input type="text" class="form-control" id="login" required placeholder="Login" [(ngModel)]="user.login">
+            <input type="text" class="form-control" id="login" name="login" name="login" required placeholder="Login" [(ngModel)]="user.login" name="login">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" required placeholder="Password" [(ngModel)]="user.password">
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Password" [(ngModel)]="user.password" name="password">
         </div>
         <div class="checkbox">
             <label>
-            <input id="createAccount" type="checkbox" [(ngModel)]="user.isNew"> Create Account?
+            <input id="createAccount" type="checkbox" [(ngModel)]="user.isNew" name="isNew"> Create Account?
             </label>
         </div>
         <div class="form-group" *ngIf="user.isNew">
             <label for="login">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Your Name" [(ngModel)]="user.name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" [(ngModel)]="user.name" name="name">
         </div>
         
         <button type="submit" class="btn btn-default pull-right" (click)="onClick($event)" >Login</button>
@@ -67,6 +67,7 @@ export class LoginComponent {
     }
     onLoginError(error){
         this.showLoading = false; 
+        console.log(error);
         this.errorMessage = error._body;
     }
 }

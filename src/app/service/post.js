@@ -22,17 +22,17 @@ var PostService = (function () {
     }
     PostService.prototype.getPosts = function () {
         return this._http
-            .get('./api/posts')
+            .get('api/posts')
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.insert = function (p) {
         return this._http
-            .post('./api/posts', JSON.stringify(p), this._headerService.getJsonHeaders(this._loginService.getToken()))
+            .post('api/posts', JSON.stringify(p), this._headerService.getJsonHeaders(this._loginService.getToken()))
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.delete = function (p) {
         return this._http
-            .delete('./api/posts/' + p._id, this._headerService.getJsonHeaders(this._loginService.getToken()))
+            .delete('api/posts/' + p._id, this._headerService.getJsonHeaders(this._loginService.getToken()))
             .map(function (res) { return res.json(); });
     };
     return PostService;

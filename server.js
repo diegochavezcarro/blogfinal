@@ -187,6 +187,6 @@ router.route('/posts/:post_id?')
 //register router
 app.use('/api', router);
 //start server
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 app.listen(port);
 console.log('Listen: ' + port);

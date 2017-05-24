@@ -46,6 +46,7 @@ export class HomeComponent {
         );
     }
     onLoadAllPostsResult(p){
+        console.log(p);
         this.posts = p;
         this.showLoading = false;
     }

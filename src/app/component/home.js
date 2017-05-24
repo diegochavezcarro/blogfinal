@@ -25,6 +25,7 @@ var HomeComponent = (function () {
         this._postService.getPosts().subscribe(function (p) { return _this.onLoadAllPostsResult(p); }, function (err) { return console.log(err); });
     };
     HomeComponent.prototype.onLoadAllPostsResult = function (p) {
+        console.log(p);
         this.posts = p;
         this.showLoading = false;
     };

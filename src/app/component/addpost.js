@@ -34,7 +34,7 @@ var AddPostComponent = (function () {
         this._postService.insert(this.post).subscribe(function (result) { return _this.onInsertPostResult(result); }, function (error) { return _this.onInsertPostError(error); });
     };
     AddPostComponent.prototype.onInsertPostResult = function (result) {
-        this._router.navigate(['Home']);
+        this._router.navigate(['/']);
     };
     AddPostComponent.prototype.onInsertPostError = function (error) {
         this.showLoading = false;
@@ -45,7 +45,7 @@ var AddPostComponent = (function () {
 AddPostComponent = __decorate([
     core_1.Component({
         providers: [post_1.PostService],
-        template: "\n\n    <div class=\"col-md-4 col-md-offset-4\" *ngIf=\"showLoading\">\n        Aguarde...\n    </div>\n    \n    <br />\n    \n    <div class=\"col-md-8 col-md-offset-2\" *ngIf=\"!showLoading\">\n        \n    <div *ngIf=\"errorMessage\" class=\"alert alert-danger\" role=\"alert\">\n        {{errorMessage}}\n    </div>\n    \n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">Add Post</div>\n        <div class=\"panel-body\">\n            <form ngForm>\n        <div class=\"form-group\">\n            <label for=\"title\">Title</label>\n            <input type=\"text\" class=\"form-control\" id=\"title\" required placeholder=\"Title\" [(ngModel)]=\"post.title\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"text\">Text</label>\n            <textarea rows=10 cols=100 class=\"form-control\" id=\"text\" [(ngModel)]=\"post.text\"></textarea>\n        </div>\n        \n        <button type=\"submit\" class=\"btn btn-default pull-right\" (click)=\"onClick($event)\">Create</button>\n        </form>\n        \n        </div>\n      </div>\n    </div>\n    "
+        template: "\n\n    <div class=\"col-md-4 col-md-offset-4\" *ngIf=\"showLoading\">\n        Aguarde...\n    </div>\n    \n    <br />\n    \n    <div class=\"col-md-8 col-md-offset-2\" *ngIf=\"!showLoading\">\n        \n    <div *ngIf=\"errorMessage\" class=\"alert alert-danger\" role=\"alert\">\n        {{errorMessage}}\n    </div>\n    \n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">Add Post</div>\n        <div class=\"panel-body\">\n            <form ngForm>\n        <div class=\"form-group\">\n            <label for=\"title\">Title</label>\n            <input type=\"text\" name=\"title\" class=\"form-control\" id=\"title\" required placeholder=\"Title\" [(ngModel)]=\"post.title\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"text\">Text</label>\n            <textarea rows=10 cols=100 class=\"form-control\" name=\"text\" id=\"text\" [(ngModel)]=\"post.text\"></textarea>\n        </div>\n        \n        <button type=\"submit\" class=\"btn btn-default pull-right\" (click)=\"onClick($event)\">Create</button>\n        </form>\n        \n        </div>\n      </div>\n    </div>\n    "
     }),
     __metadata("design:paramtypes", [login_1.LoginService, router_1.Router, post_1.PostService])
 ], AddPostComponent);

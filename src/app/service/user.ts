@@ -12,7 +12,7 @@
         }
         public insert(u:User) {
         return this._http
-                .post('./api/login', JSON.stringify(u),this._header.getJsonHeaders())
+                .post('api/login', JSON.stringify(u),this._header.getJsonHeaders())
                 .map(res => res.json());
         }
     }
