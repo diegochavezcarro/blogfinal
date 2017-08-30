@@ -11,9 +11,9 @@ tour of heroes final mas blog de libro "angular na pratica" (https://github.com/
 	"password":"password"
 }**
 3. Login con http://localhost:3001/api/login usando metodo POST y agregar:
-** {
+**{
 	"login": "nombreusuario",
 	"password":"password"
-} **
+}**
 4. Utilizando el token dado anteriormente repetir el paso 1 agregandolo dentro de un header llamado x-access-token
 Se deberia poder acceder correctamente
